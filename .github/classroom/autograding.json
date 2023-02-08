@@ -9,6 +9,86 @@
       "comparison": "included",
       "timeout": 10,
       "points": 10
+    },
+    {
+      "name": "123456789",
+      "setup": "make",
+      "run": "./project01 15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
+      "input": "",
+      "output": "123456789",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "cs221rocks",
+      "setup": "make",
+      "run": "./project01 ab21b9ff03e6376d3b7a82a538e862f98feffac56361da6aee0c946ffefa21c1",
+      "input": "",
+      "output": "not found",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "netscape",
+      "setup": "make",
+      "run": "./project01 e3460d5f033911b6ef5f75b3f709f2d7c033acd90d73d01e8a7a238a461dc65f",
+      "input": "",
+      "output": "netscape",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "singer",
+      "setup": "make",
+      "run": "./project01 92d74bb8bddbbb9c8b50ba880f92f070bd5fe84e95fe68ee1e4e8a8c4440302b",
+      "input": "",
+      "output": "singer",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "n&#33;n3r&#36;",
+      "setup": "make",
+      "run": "./project01 7e016a27dae18f63bb89e1455273332e4eab64a5308575ab9494dc78f06960bc",
+      "input": "",
+      "output": "n!n3r$",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "&#35;&#64;rl3y",
+      "setup": "make",
+      "run": "./project01 f82826ca508f2373f649a310e06f41f660188722db73a0b4c101b53f0eed8439",
+      "input": "",
+      "output": "#@rl3y",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "yankees1",
+      "setup": "make",
+      "run": "./project01 5a5edf336a635cafefa91f7c281e4a83572831308c9e42f2dfe0d5ce68fb959e",
+      "input": "",
+      "output": "yankees1",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "frisco1",
+      "setup": "make",
+      "run": "./project01 350f87acbed079c76f818e04a5e190e2247208cfdf5eb25c97006cc30f6b12af",
+      "input": "",
+      "output": "frisco1",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
     }
   ]
 }
