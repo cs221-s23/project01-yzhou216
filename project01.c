@@ -32,3 +32,42 @@ void sha256(char *dest, char *src) {
         dest += 2;
     }
 }
+
+char *leet(char *str)
+{
+	char *leeted_str;
+	leeted_str = (char *) malloc(strlen(str));
+	for (int i = 0; i < strlen(str); i++) {
+		switch (str[i]) {
+			case 'o':
+				str[i] = '0';
+				break;
+			case 'e':
+				str[i] = '3';
+				break;
+			case 'i':
+				str[i] = '!';
+				break;
+			case 'a':
+				str[i] = '@';
+				break;
+			case 'h':
+				str[i] = '#';
+				break;
+			case 's':
+				str[i] = '$';
+				break;
+			case 't':
+				str[i] = '+';
+				break;
+		}
+	}
+	strcpy(leeted_str, str);
+	return str;
+}
+
+int main(int argc, char **argv)
+{
+	printf("Leeted string: %s\n", leet(argv[1]));
+	return 0;
+}
