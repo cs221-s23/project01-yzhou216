@@ -62,8 +62,19 @@ char *leet(char *str)
 	return str;
 }
 
+char *add_one(char *str)
+{
+	char *str_one;
+	str_one = (char *) malloc(strlen(str) + 1);
+	str_one = str;
+	str_one[strlen(str_one) + 1] = 0;
+	str_one[strlen(str_one)] = '1';
+	return str_one;
+}
+
 int main(int argc, char **argv)
 {
 	printf("Leeted string: %s\n", leet(argv[1]));
+	printf("String with \"1\" at the end: %s\n", add_one(argv[1]));
 	return 0;
 }
