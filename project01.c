@@ -34,8 +34,6 @@ void sha256(char *dest, char *src) {
 
 char *leet(char *str)
 {
-	char *leeted_str;
-	leeted_str = (char *) malloc(strlen(str));
 	for (int i = 0; i < strlen(str); i++) {
 		switch (str[i]) {
 			case 'o':
@@ -61,8 +59,7 @@ char *leet(char *str)
 				break;
 		}
 	}
-	strcpy(leeted_str, str);
-	return leeted_str;
+	return str;
 }
 
 int main(int argc, char **argv)
