@@ -8,7 +8,8 @@
 #define DIG_BIN_LEN 32
 #define DIG_STR_LEN ((DIG_BIN_LEN * 2) + 1)
 
-void sha256(char *dest, char *src) {
+void sha256(char *dest, char *src)
+{
     // zero out the sha256 context
     struct sha256_ctx ctx;
     memset(&ctx, 0, sizeof(ctx));
