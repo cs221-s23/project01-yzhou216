@@ -62,7 +62,7 @@ char *leet(char *str)
 		}
 	}
 	strcpy(leeted_str, str);
-	return str;
+	return leeted_str;
 }
 
 int main(int argc, char **argv)
