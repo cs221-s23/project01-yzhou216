@@ -33,6 +33,14 @@ void sha256(char *dest, char *src)
 	}
 }
 
+char *dig(char *str)
+{
+	char *dig_str;
+	dig_str = (char *) malloc(DIG_STR_LEN);
+	sha256(dig_str, str);
+	return dig_str;
+}
+
 char *leet(char *str)
 {
 	for (int i = 0; i < strlen(str); i++) {
@@ -77,5 +85,6 @@ int main(int argc, char **argv)
 {
 	printf("Leeted string: %s\n", leet(argv[1]));
 	printf("String with \"1\" at the end: %s\n", add_one(argv[1]));
+	printf("%s\n", dig(argv[1]));
 	return 0;
 }
