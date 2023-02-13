@@ -8,6 +8,8 @@
 #define DIG_BIN_LEN 32
 #define DIG_STR_LEN ((DIG_BIN_LEN * 2) + 1)
 
+#define DICT_LEN sizeof(password) / sizeof(password[0])
+
 void sha256(char *dest, char *src)
 {
 	/* zero out the sha256 context */
@@ -83,8 +85,37 @@ char *add_one(char *str)
 
 int main(int argc, char **argv)
 {
-	printf("Leeted string: %s\n", leet(argv[1]));
-	printf("String with \"1\" at the end: %s\n", add_one(argv[1]));
-	printf("%s\n", dig(argv[1]));
+	/* password array for debug purpose */
+	char *password[] = {"hi", "password", "123456789", "niners"};
+	/* chage DICT_LEN to 1000 at the top of the file when running using the
+	   provided password dict */
+
+	char dig_str[DIG_STR_LEN];
+	strcpy(dig_str, argv[1]);
+
+	for (int i = 0; i < DICT_LEN; i++) {
+		if (!strcmp(dig_str, dig(password[i]))) {
+			printf("%s\n", password[i]);
+			return 0;
+		}
+	}
+
+	/* Segmentation fault */
+	for (int i = 0; i < DICT_LEN; i++) {
+		if (!strcmp(dig_str, dig(leet(password[i])))) {
+			printf("%s\n", leet(password[i]));
+			return 0;
+		}
+	}
+
+	/* Segmentation fault */
+	for (int i = 0; i < DICT_LEN; i++) {
+		if(!strcmp(dig_str, dig(add_one(passwords[i])))) {
+			printf("%s\n", add_one(passwords[i]));
+			return 0;
+		}
+	}
+
+	printf("%s\n", "not found");
 	return 0;
 }
