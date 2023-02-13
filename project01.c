@@ -110,8 +110,8 @@ int main(int argc, char **argv)
 
 	/* Segmentation fault */
 	for (int i = 0; i < DICT_LEN; i++) {
-		if(!strcmp(dig_str, dig(add_one(passwords[i])))) {
-			printf("%s\n", add_one(passwords[i]));
+		if(!strcmp(dig_str, dig(add_one(password[i])))) {
+			printf("%s\n", add_one(password[i]));
 			return 0;
 		}
 	}
