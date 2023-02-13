@@ -1,5 +1,5 @@
-PROG = sha256demo
-OBJS = project01.o sha256.o
+PROG = project01
+OBJS = project01.o sha256.o passwords.o
 
 %.o: %.c
 	gcc -c -g -o $@ $<
