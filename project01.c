@@ -8,7 +8,7 @@
 #define DIG_BIN_LEN 32
 #define DIG_STR_LEN ((DIG_BIN_LEN * 2) + 1)
 
-#define DICT_LEN sizeof(password) / sizeof(password[0])
+#define DICT_LEN sizeof(password_d) / sizeof(password_d[0])
 
 void sha256(char *dest, char *src)
 {
@@ -86,7 +86,7 @@ char *add_one(char *str)
 int main(int argc, char **argv)
 {
 	/* password array for debug purpose */
-	char *password[] = {"hi", "password", "123456789", "niners"};
+	char *password_d[] = {"hi", "password", "123456789", "niners"};
 	/* chage DICT_LEN to 1000 at the top of the file when running using the
 	   provided password dict */
 
@@ -94,24 +94,24 @@ int main(int argc, char **argv)
 	strcpy(dig_str, argv[1]);
 
 	for (int i = 0; i < DICT_LEN; i++) {
-		if (!strcmp(dig_str, dig(password[i]))) {
-			printf("%s\n", password[i]);
+		if (!strcmp(dig_str, dig(password_d[i]))) {
+			printf("%s\n", password_d[i]);
 			return 0;
 		}
 	}
 
 	/* Segmentation fault */
 	for (int i = 0; i < DICT_LEN; i++) {
-		if (!strcmp(dig_str, dig(leet(password[i])))) {
-			printf("%s\n", leet(password[i]));
+		if (!strcmp(dig_str, dig(leet(password_d[i])))) {
+			printf("%s\n", leet(password_d[i]));
 			return 0;
 		}
 	}
 
 	/* Segmentation fault */
 	for (int i = 0; i < DICT_LEN; i++) {
-		if(!strcmp(dig_str, dig(add_one(password[i])))) {
-			printf("%s\n", add_one(password[i]));
+		if(!strcmp(dig_str, dig(add_one(password_d[i])))) {
+			printf("%s\n", add_one(password_d[i]));
 			return 0;
 		}
 	}
