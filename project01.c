@@ -46,32 +46,35 @@ char *dig(char *str)
 
 char *leet(char *str)
 {
+	char* res = (char*) malloc((strlen(str) + 1) * sizeof(char));
 	for (int i = 0; i < strlen(str); i++) {
 		switch (str[i]) {
 			case 'o':
-				str[i] = '0';
+				res[i] = '0';
 				break;
 			case 'e':
-				str[i] = '3';
+				res[i] = '3';
 				break;
 			case 'i':
-				str[i] = '!';
+				res[i] = '!';
 				break;
 			case 'a':
-				str[i] = '@';
+				res[i] = '@';
 				break;
 			case 'h':
-				str[i] = '#';
+				res[i] = '#';
 				break;
 			case 's':
-				str[i] = '$';
+				res[i] = '$';
 				break;
 			case 't':
-				str[i] = '+';
+				res[i] = '+';
 				break;
+			default:
+				res[i] = str[i];
 		}
 	}
-	return str;
+	return res;
 }
 
 char* add_one(char* str) {
@@ -103,12 +106,10 @@ int main(int argc, char **argv)
 			exit(0);
 		}
 
-		/*
 		if (!strcmp(dig_str, dig(leet(passwords[i])))) {
 			printf("%s\n", leet(passwords[i]));
 			exit(0);
 		}
-		*/
 	}
 
 	printf("%s\n", "not found");
