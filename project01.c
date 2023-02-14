@@ -39,7 +39,7 @@ void sha256(char *dest, char *src)
 char *dig(char *str)
 {
 	char *dig_str;
-	dig_str = (char *) malloc(DIG_STR_LEN);
+	dig_str = (char *) malloc((DIG_STR_LEN + 1) * sizeof(char));
 	sha256(dig_str, str);
 	return dig_str;
 }
