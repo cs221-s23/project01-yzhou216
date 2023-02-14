@@ -46,7 +46,7 @@ char *dig(char *str)
 
 char *leet(char *str)
 {
-	char* res = (char*) malloc((strlen(str) + 1) * sizeof(char));
+	char *res = (char *) malloc((strlen(str) + 1) * sizeof(char));
 	for (int i = 0; i < strlen(str); i++) {
 		switch (str[i]) {
 			case 'o':
@@ -77,8 +77,8 @@ char *leet(char *str)
 	return res;
 }
 
-char* add_one(char* str) {
-	char* res = (char*) malloc((strlen(str) + 2) * sizeof(char));
+char *add_one(char *str) {
+	char* res = (char *) malloc((strlen(str) + 2) * sizeof(char));
 	strcpy(res, str);
 	res[strlen(str)] = '1';
 	res[strlen(str) + 1] = '\0';
@@ -101,7 +101,7 @@ int main(int argc, char **argv)
 			exit(0);
 		}
 
-		if(!strcmp(dig_str, dig(add_one(passwords[i])))) {
+		if (!strcmp(dig_str, dig(add_one(passwords[i])))) {
 			printf("%s\n", add_one(passwords[i]));
 			exit(0);
 		}
