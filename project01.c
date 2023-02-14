@@ -92,12 +92,10 @@ int main(int argc, char **argv)
 		/*
 		if(!strcmp(dig_str, dig(add_one(passwords[i])))) {
 			printf("%s\n", add_one(passwords[i]));
-			//printf("%s\n", "Helloworld");
 			exit(0);
 		}
 		if (!strcmp(dig_str, dig(leet(passwords[i])))) {
-			//printf("%s\n", leet(passwords[i]));
-			printf("%s\n", "Helloworld0");
+			printf("%s\n", leet(passwords[i]));
 			exit(0);
 		}
 		*/
