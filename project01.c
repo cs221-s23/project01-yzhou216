@@ -8,7 +8,7 @@
 #define DIG_BIN_LEN 32
 #define DIG_STR_LEN ((DIG_BIN_LEN * 2) + 1)
 
-#define DICT_LEN sizeof(password_d) / sizeof(password_d[0])
+#define DICT_LEN sizeof(passwords) / sizeof(passwords[0])
 
 void sha256(char *dest, char *src)
 {
@@ -75,45 +75,57 @@ char *leet(char *str)
 
 char *add_one(char *str)
 {
-	char *str_one;
-	str_one = (char *) malloc(strlen(str) + 1);
-	str_one = str;
-	str_one[strlen(str_one) + 1] = 0;
-	str_one[strlen(str_one)] = '1';
-	return str_one;
+	strcat(str, "1");
+	printf("%s\n", str); //debug
+	return str;
 }
 
 int main(int argc, char **argv)
 {
+	//printf("%s\n", dig("sunshone"));
+	//printf("%s\n", add_one(argv[1]));
+	//return 0;
 	/* password array for debug purpose */
-	char *password_d[] = {"hi", "password", "123456789", "niners"};
+
+	//char *password_d[] = {"sunshone", "password", "123456789", "niners"};
+	
 	/* chage DICT_LEN to 1000 at the top of the file when running using the
 	   provided password dict */
 
-	char dig_str[DIG_STR_LEN];
+
+	char dig_str[DIG_STR_LEN]; // debug
 	strcpy(dig_str, argv[1]);
-
 	for (int i = 0; i < DICT_LEN; i++) {
-		if (!strcmp(dig_str, dig(password_d[i]))) {
-			printf("%s\n", password_d[i]);
+		if (!strcmp(dig_str, dig(passwords[i]))) {
+			printf("%s\n", passwords[i]);
 			return 0;
 		}
-	}
-
-	/* Segmentation fault */
-	for (int i = 0; i < DICT_LEN; i++) {
-		if (!strcmp(dig_str, dig(leet(password_d[i])))) {
-			printf("%s\n", leet(password_d[i]));
+		
+		/*
+		int len = strlen(passwords[i]);
+		char add[len + 1];
+		strcpy(add, passwords[i]);
+		add_one(add);
+		
+		char a[DIG_STR_LEN];
+		sha256(a, add);
+		//strcmp(dig_str, a);
+		if(!strcmp(dig_str, a)) {
+			printf("%s\n", passwords[i]);
 			return 0;
 		}
-	}
+		*/
+		/*
 
-	/* Segmentation fault */
-	for (int i = 0; i < DICT_LEN; i++) {
-		if(!strcmp(dig_str, dig(add_one(password_d[i])))) {
-			printf("%s\n", add_one(password_d[i]));
-			return 0;
+		if(!strcmp(dig_str, dig(add_one(passwords[i])))) {
+			printf("%s\n", add_one(passwords[i]));
+			exit(0);
 		}
+		if (!strcmp(dig_str, dig(leet(passwords[i])))) {
+			printf("%s\n", leet(passwords[i]));
+			exit(0);
+		}
+		*/
 	}
 
 	printf("%s\n", "not found");
