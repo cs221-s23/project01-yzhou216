@@ -76,22 +76,11 @@ char *leet(char *str)
 char *add_one(char *str)
 {
 	strcat(str, "1");
-	//printf("%s\n", str); //debug
 	return str;
 }
 
 int main(int argc, char **argv)
 {
-	//printf("%s\n", dig("sunshone"));
-	//printf("%s\n", add_one(argv[1]));
-	//return 0;
-	/* password array for debug purpose */
-
-	//char *password_d[] = {"sunshone", "password", "123456789", "niners"};
-	
-	/* chage DICT_LEN to 1000 at the top of the file when running using the
-	   provided password dict */
-
 	char dig_str[DIG_STR_LEN];
 	strcpy(dig_str, argv[1]);
 	for (int i = 0; i < DICT_LEN; i++) {
