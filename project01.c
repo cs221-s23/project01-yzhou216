@@ -90,7 +90,7 @@ int main(int argc, char **argv)
 {
 	if (argc != 2) {
 		printf("%s\n", "invalid arguments");
-		exit(2);
+		exit(0);
 	}
 
 	char dig_str[DIG_STR_LEN];
