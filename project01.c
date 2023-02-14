@@ -88,8 +88,10 @@ int main(int argc, char **argv)
 		printf("%s\n", "invalid arguments");
 		exit(0);
 	}
+
 	char dig_str[DIG_STR_LEN];
 	strcpy(dig_str, argv[1]);
+
 	for (int i = 0; i < DICT_LEN; i++) {
 		if (!strcmp(dig_str, dig(passwords[i]))) {
 			printf("%s\n", passwords[i]);
@@ -100,6 +102,7 @@ int main(int argc, char **argv)
 			printf("%s\n", add_one(passwords[i]));
 			exit(0);
 		}
+
 		/*
 		if (!strcmp(dig_str, dig(leet(passwords[i])))) {
 			printf("%s\n", leet(passwords[i]));
