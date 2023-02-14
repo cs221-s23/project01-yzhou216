@@ -9,7 +9,7 @@
 #define DIG_STR_LEN ((DIG_BIN_LEN * 2) + 1)
 
 /* define the length of passwords dictionary */
-#define DICT_LEN sizeof(passwords) / sizeof(passwords[0])
+#define DICT_LEN (sizeof(passwords) / sizeof(passwords[0]))
 
 void sha256(char *dest, char *src)
 {
