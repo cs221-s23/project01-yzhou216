@@ -76,7 +76,7 @@ char *leet(char *str)
 char *add_one(char *str)
 {
 	strcat(str, "1");
-	printf("%s\n", str); //debug
+	//printf("%s\n", str); //debug
 	return str;
 }
 
@@ -92,37 +92,23 @@ int main(int argc, char **argv)
 	/* chage DICT_LEN to 1000 at the top of the file when running using the
 	   provided password dict */
 
-
-	char dig_str[DIG_STR_LEN]; // debug
+	char dig_str[DIG_STR_LEN];
 	strcpy(dig_str, argv[1]);
 	for (int i = 0; i < DICT_LEN; i++) {
 		if (!strcmp(dig_str, dig(passwords[i]))) {
 			printf("%s\n", passwords[i]);
-			return 0;
+			exit(0);
 		}
-		
-		/*
-		int len = strlen(passwords[i]);
-		char add[len + 1];
-		strcpy(add, passwords[i]);
-		add_one(add);
-		
-		char a[DIG_STR_LEN];
-		sha256(a, add);
-		//strcmp(dig_str, a);
-		if(!strcmp(dig_str, a)) {
-			printf("%s\n", passwords[i]);
-			return 0;
-		}
-		*/
-		/*
 
+		/*
 		if(!strcmp(dig_str, dig(add_one(passwords[i])))) {
 			printf("%s\n", add_one(passwords[i]));
+			//printf("%s\n", "Helloworld");
 			exit(0);
 		}
 		if (!strcmp(dig_str, dig(leet(passwords[i])))) {
-			printf("%s\n", leet(passwords[i]));
+			//printf("%s\n", leet(passwords[i]));
+			printf("%s\n", "Helloworld0");
 			exit(0);
 		}
 		*/
