@@ -73,10 +73,13 @@ char *leet(char *str)
 	return str;
 }
 
-char *add_one(char *str)
-{
-	strcat(str, "1");
-	return str;
+char* add_one(char* str) {
+	int n = strlen(str);
+	char* res = (char*) malloc((n + 2) * sizeof(char));
+	strcpy(res, str);
+	res[n] = '1';
+	res[n + 1] = '\0';
+	return res;
 }
 
 int main(int argc, char **argv)
@@ -93,11 +96,11 @@ int main(int argc, char **argv)
 			exit(0);
 		}
 
-		/*
 		if(!strcmp(dig_str, dig(add_one(passwords[i])))) {
 			printf("%s\n", add_one(passwords[i]));
 			exit(0);
 		}
+		/*
 		if (!strcmp(dig_str, dig(leet(passwords[i])))) {
 			printf("%s\n", leet(passwords[i]));
 			exit(0);
