@@ -81,6 +81,10 @@ char *add_one(char *str)
 
 int main(int argc, char **argv)
 {
+	if (argc != 2) {
+		printf("%s\n", "invalid arguments");
+		exit(0);
+	}
 	char dig_str[DIG_STR_LEN];
 	strcpy(dig_str, argv[1]);
 	for (int i = 0; i < DICT_LEN; i++) {
