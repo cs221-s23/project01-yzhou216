@@ -74,11 +74,10 @@ char *leet(char *str)
 }
 
 char* add_one(char* str) {
-	int n = strlen(str);
-	char* res = (char*) malloc((n + 2) * sizeof(char));
+	char* res = (char*) malloc((strlen(str) + 2) * sizeof(char));
 	strcpy(res, str);
-	res[n] = '1';
-	res[n + 1] = '\0';
+	res[strlen(str)] = '1';
+	res[strlen(str) + 1] = '\0';
 	return res;
 }
 
