@@ -91,7 +91,7 @@ char *add_one(char *str)
 int main(int argc, char **argv)
 {
 	if (argc != 2) {
-		printf("%s\n", "invalid arguments");
+		printf("invalid arguments\n");
 		exit(0);
 	}
 
