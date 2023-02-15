@@ -78,6 +78,10 @@ char *leet(char *str)
 
 char *add_one(char *str)
 {
+	/*
+	 * Allocate memory for the result to be one byte more than the source
+	 * string.
+	 */
 	char *res = (char *) malloc((strlen(str) + 2) * sizeof(char));
 	strcpy(res, str);
 	strcat(res, "1");
