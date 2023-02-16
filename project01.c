@@ -115,6 +115,6 @@ int main(int argc, char **argv)
 		}
 	}
 
-	printf("%s\n", "not found");
+	printf("not found\n");
 	return 0;
 }
