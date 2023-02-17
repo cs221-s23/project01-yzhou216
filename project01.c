@@ -80,7 +80,7 @@ char *add_one(char *str)
 {
 	/*
 	 * Allocate memory for the result to be one byte more than the source
-	 * string.
+	 * string for the addition of the charactor '1' at the end.
 	 */
 	char *res = (char *) malloc((strlen(str) + 2) * sizeof(char));
 	memset(res, 0, sizeof(res));
