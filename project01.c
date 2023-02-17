@@ -83,8 +83,9 @@ char *add_one(char *str)
 	 * string.
 	 */
 	char *res = (char *) malloc((strlen(str) + 2) * sizeof(char));
-	strcpy(res, str);
-	strcat(res, "1");
+	memset(res, 0, sizeof(res));
+	strncpy(res, str, sizeof(res) - 1);
+	strncat(res, "1", sizeof(res) - 1);
 	return res;
 }
 
