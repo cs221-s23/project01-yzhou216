@@ -95,24 +95,35 @@ int main(int argc, char **argv)
 		exit(0);
 	}
 
-	char dig_str[DIG_STR_LEN];
-	strcpy(dig_str, argv[1]);
+	char *dig_str;
+	char *add_one_str;
+	char *leet_str;
 
 	for (int i = 0; i < DICT_LEN; i++) {
-		if (!strcmp(dig_str, dig(passwords[i]))) {
+		dig_str = dig(passwords[i]);
+		if (!strcmp(argv[1], dig_str)) {
 			printf("%s\n", passwords[i]);
 			return 0;
 		}
+		free(dig_str);
 
-		if (!strcmp(dig_str, dig(add_one(passwords[i])))) {
-			printf("%s\n", add_one(passwords[i]));
+		add_one_str = add_one(passwords[i]);
+		dig_str = dig(add_one_str);
+		if (!strcmp(argv[1], dig_str)) {
+			printf("%s\n", add_one_str);
 			return 0;
 		}
+		free(add_one_str);
+		free(dig_str);
 
-		if (!strcmp(dig_str, dig(leet(passwords[i])))) {
-			printf("%s\n", leet(passwords[i]));
+		leet_str = leet(passwords[i]);
+		dig_str = dig(leet_str);
+		if (!strcmp(argv[1], dig_str)) {
+			printf("%s\n", leet_str);
 			return 0;
 		}
+		free(leet_str);
+		free(dig_str);
 	}
 
 	printf("not found\n");
