@@ -83,9 +83,11 @@ char *add_one(char *str)
 	 * string for the addition of the charactor '1' at the end.
 	 */
 	char *res = (char *) malloc((strlen(str) + 2) * sizeof(char));
-	memset(res, 0, sizeof(res));
-	strncpy(res, str, sizeof(res) - 1);
-	strncat(res, "1", sizeof(res) - 1);
+	/* length of the res string excluding the NULL terminator */
+	int res_len = strlen(str) + 1;
+	memset(res, 0, res_len + 1);
+	strncpy(res, str, res_len);
+	strncat(res, "1", res_len);
 	return res;
 }
 
