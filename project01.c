@@ -98,6 +98,10 @@ int main(int argc, char **argv)
 		exit(0);
 	}
 
+	/*
+	 * char pointers used to free the heap memory returned in the call
+	 * block allocated by malloc function outside of the main function
+	 */
 	char *dig_str;
 	char *add_one_str;
 	char *leet_str;
